@@ -67,4 +67,16 @@ public class RomanNumbersTests {
     public void shouldConvertTen() {
         assertEquals("X", romanNumbers.convertToRoman(10));
     }
+
+    @Test
+    public void shouldConvert15() {
+        assertEquals("XV", romanNumbers.convertToRoman(15));
+    }
+
+    @Test
+    public void shouldConvert39() {
+        assertEquals("XXXIX", romanNumbers.convertToRoman(39));
+    }
+
+
 }

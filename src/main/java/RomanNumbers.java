@@ -16,7 +16,7 @@ public class RomanNumbers {
         for (Map.Entry<Integer, String> entry : correlation.entrySet()) {
             if (number >= entry.getKey()) {
                 result += correlation.get(entry.getKey()).repeat((int)(number / entry.getKey()));
-                number -= entry.getKey();
+                number -= entry.getKey() * (int)(number / entry.getKey());
             }
         }
         return result;
