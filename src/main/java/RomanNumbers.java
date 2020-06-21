@@ -4,9 +4,18 @@ public class RomanNumbers {
 
         String result = "";
 
-        if (number >= 9) {
-            result += "IX";
-            number -= 9;
+        String roman = "X";
+        int value = 10;
+        if (number >= value) {
+            result += roman;
+            number -= value;
+        }
+
+        roman = "IX";
+        value = 9;
+        if (number >= value) {
+            result += roman;
+            number -= value;
         }
 
         if (number >= 5) {
