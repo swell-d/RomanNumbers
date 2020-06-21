@@ -4,11 +4,17 @@ public class RomanNumbers {
 
         String result = "";
 
-        if (number == 5) {
-            result = "V";
-        } else {
-            result = number == 4 ? "IV" : "I".repeat(number);
+        if (number >= 9) {
+            result += "IX";
+            number -= 9;
         }
+
+        if (number >= 5) {
+            result += "V";
+            number -= 5;
+        }
+
+        result += number == 4 ? "IV" : "I".repeat(number);
 
         return result;
     }
