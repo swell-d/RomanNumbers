@@ -1,29 +1,44 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class RomanNumbers {
 
     public String convertToRoman(int number) {
 
+        int modulo = number;
+
+
         String result = "";
+        Map<Integer, String> correlation = new HashMap<Integer, String>(){{
+            put(10, "X");
+            put(9, "IX");
+            put(5, "V");
+            put(4, "IV");
+            put(1, "I");
+        }};
 
-        String roman = "X";
+
         int value = 10;
-        if (number >= value) {
-            result += roman;
-            number -= value;
+
+        if (modulo >= value) {
+            result += correlation.get(value);
+            modulo -= value;
         }
 
-        roman = "IX";
+
         value = 9;
-        if (number >= value) {
-            result += roman;
-            number -= value;
+        if (modulo >= value) {
+            result += correlation.get(value);
+            modulo -= value;
         }
 
-        if (number >= 5) {
-            result += "V";
-            number -= 5;
+        value = 5;
+        if (modulo >= 5) {
+            result += correlation.get(value);
+            modulo -= value;
         }
 
-        result += number == 4 ? "IV" : "I".repeat(number);
+        result += modulo == 4 ? "IV" : "I".repeat(modulo);
 
         return result;
     }
