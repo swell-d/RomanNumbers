@@ -29,4 +29,11 @@ public class RomanNumbersTests {
     public void shouldConvertFour() {
         assertEquals("IV", new RomanNumbers().convertToRoman(4));
     }
+
+    @Test
+    public void shouldConvertFive() {
+        assertEquals("V", new RomanNumbers().convertToRoman(5));
+    }
+
+
 }
